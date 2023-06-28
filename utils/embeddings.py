@@ -23,5 +23,5 @@ def create_vector_database(docs):
     return db
 
 def save_vector_database(db,filename):
-    db.save_local("filename")
+    db.save_local(filename)
 
