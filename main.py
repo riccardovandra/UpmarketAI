@@ -1,5 +1,6 @@
 import streamlit as st
 from utils import workflow
+from frontend import biz_profile
 
 st.set_page_config(
     page_title="One Click Business Profile Creation",
@@ -7,23 +8,8 @@ st.set_page_config(
 )
 
 def main():
-    st.title('One-click Business Profile Creation')
-    st.write('Define information such as Business Description, Target Audience, Product Category, Tone of Voice & Value Proposition just by adding a Website URL')
-    website_url = st.text_input('Insert Website URL Here')
 
-    if website_url:
-        description = workflow.get_business_description(website_url)
-        st.header("Business Description")
-        st.write(description)
-
-        description_short = workflow.get_business_description_short(description)
-
-        st.header("Description (Short)")
-        st.write(description_short)
-        
-        audience_persona = workflow.get_audience_persona(description)
-        st.header("Audience Persona")
-        st.write(audience_persona)
+    biz_profile.get_main_elements()
 
 if __name__ == '__main__':
     main()

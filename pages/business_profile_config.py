@@ -1,12 +1,8 @@
 import streamlit as st
-import json
 from utils import storage
 
 
-config_path = 'config/form_config.json'
-with open(config_path, 'r') as config_file:
-    config_data = json.load(config_file)
-    form_fields = config_data['form_fields']
+form_fields = storage.load_form_config('config/form_config.json')
 
 #Form Functionalities
 with st.form('Business Profile Information'):
