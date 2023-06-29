@@ -25,3 +25,8 @@ def create_vector_database(docs):
 def save_vector_database(db,filename):
     db.save_local(filename)
 
+def load_vector_database(filename):
+    db = FAISS.load_local(filename)
+
+    return db
+

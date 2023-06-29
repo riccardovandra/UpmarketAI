@@ -1,8 +1,14 @@
 import streamlit as st
 from utils import workflow
 
+st.set_page_config(
+    page_title="One Click Business Profile Creation",
+    page_icon="👋",
+)
+
 def main():
-    st.title('Business Profile Creation')
+    st.title('One-click Business Profile Creation')
+    st.write('Define information such as Business Description, Target Audience, Product Category, Tone of Voice & Value Proposition just by adding a Website URL')
     website_url = st.text_input('Insert Website URL Here')
 
     if website_url:
