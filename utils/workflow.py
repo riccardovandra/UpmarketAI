@@ -20,7 +20,7 @@ def get_business_description(website_url):
     website_doc = scraper.clean_website_content(html)
     texts = embeddings.website_text_splitter(website_doc)
     db = embeddings.create_vector_database(texts)
-    embeddings.save_vector_database(db,'data/feiss_db')
+    embeddings.save_vector_database(db,'data')
     prompt_description_long = prompts.prompt_website_description_long
     prompt_description_long_template = prompt_builder.get_prompt_template(prompt_description_long)
     finalized_description_prompt = prompt_description_long_template.format(websiteURL=website_url)

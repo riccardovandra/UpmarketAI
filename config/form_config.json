@@ -1,0 +1,107 @@
+{
+    "form_fields" : [
+        {
+            "field_name":"Brand Name",
+            "field_key":"Brand Name",
+            "field_placeholder":"",
+            "field_type":"text_input"
+        },
+        {
+            "field_name":"Website URL",
+            "field_key":"Website URL",
+            "field_placeholder":"",
+            "field_type":"text_input"
+        },
+        {
+            "field_name":"Brand Description (Long)",
+            "field_key":"Brand Description (Long)",
+            "field_placeholder":"Please add a comprehensive description of the brand",
+            "field_type":"text_area"
+        },
+        {
+            "field_name":"Brand Description (Short)",
+            "field_key":"Brand Description (Short)",
+            "field_placeholder":"Please add a shorted description of the brand",
+            "field_type":"text_area"
+        },
+        {
+            "field_name":"Target Audience",
+            "field_key":"Target Audience",
+            "field_placeholder":"Please provide us a brief description of the target audience with elements such as age range, job role and need",
+            "field_type":"text_area"
+        },
+        {
+            "field_name":"Product Category",
+            "field_key":"Product Category",
+            "field_placeholder":"",
+            "field_type":"text_input"
+        },
+        {
+            "field_name":"Business Objective",
+            "field_key":"Business Objective",
+            "field_placeholder":"",
+            "field_type":"text_input"
+        },
+        {
+            "field_name":"Tone of voice",
+            "field_key":"Tone of voice",
+            "field_placeholder":"",
+            "field_type":"text_input"
+        },
+        {
+            "field_name":"Value Proposition",
+            "field_key":"Value Proposition",
+            "field_placeholder":"",
+            "field_type":"text_input"
+        },
+        {
+            "field_name":"Unique Value Proposition 1",
+            "field_key":"Unique Value Proposition 1",
+            "field_placeholder":"",
+            "field_type":"text_area"
+        },
+        {
+            "field_name":"Unique Value Proposition 2",
+            "field_key":"Unique Value Proposition 2",
+            "field_placeholder":"",
+            "field_type":"text_area"
+        },
+        {
+            "field_name":"Unique Value Proposition 3",
+            "field_key":"Unique Value Proposition 3",
+            "field_placeholder":"",
+            "field_type":"text_area"
+        },
+        {
+            "field_name":"Unique Value Proposition 4",
+            "field_key":"Unique Value Proposition 4",
+            "field_placeholder":"",
+            "field_type":"text_area"
+        },
+        {
+            "field_name":"Main Offer",
+            "field_key":"Main Offer",
+            "field_placeholder":"",
+            "field_type":"text_area"
+        },
+        {
+            "field_name":"Main Offer URL",
+            "field_key":"Main Offer URL",
+            "field_placeholder":"",
+            "field_type":"text_input"
+        },
+        {
+            "field_name":"Bonus",
+            "field_key":"Bonus",
+            "field_placeholder":"",
+            "field_type":"text_input"
+        },
+        {
+            "field_name":"Guarantees",
+            "field_key":"Guarantees",
+            "field_placeholder":"",
+            "field_type":"text_input"
+        }
+    ]
+
+}

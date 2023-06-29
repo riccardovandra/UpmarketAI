@@ -161,3 +161,7 @@ cython_debug/
 
 #local database
 data/
+
+#form config values
+config/form_data.json
+
