@@ -1,7 +1,7 @@
 from . import chains
 from . import embeddings
 from . import prompt_builder
-from . import prompts
+import prompts
 from . import scraper
 import json
 
@@ -15,19 +15,22 @@ def get_vector_database_from_url(website_url):
 
     return db
 
-
-def get_business_description(website_url):
-
+def process_chain(prompt_template, data):
     """
-    Retrieve the business description from the website URL.
+    Helper function to process a language learning model (LLM) chain with the given data.
 
     Args:
-        website_url (str): The URL of the website.
+        prompt_template (str): The prompt template.
+        data (str or dict): The data to input to the chain.
 
     Returns:
-        str: The business description.
+        str: The result of running the chain.
     """
+    template = prompt_builder.get_prompt_template(prompt_template)
+    chain = chains.initialize_llm_chain(template)
+    return chains.run_llm_chain(chain, data)
 
+def get_business_description(website_url):
     db = get_vector_database_from_url(website_url)
     prompt_description_long = prompts.prompt_website_description_long
     prompt_description_long_template = prompt_builder.get_prompt_template(prompt_description_long)
@@ -38,46 +41,19 @@ def get_business_description(website_url):
     return description
 
 def get_business_description_short(description):
-    """
-        Generate a short business description from the provided description.
-
-        Args:
-            description (str): The business description.
-
-        Returns:
-            str: The short business description.
-    """
-
-    prompt_description_short_template = prompt_builder.get_prompt_template(prompts.prompt_website_description_short)
-    summarizer = chains.initialize_llm_chain(prompt_description_short_template)
-    description_short = chains.run_llm_chain(summarizer,description)
-
-    return description_short
+    return process_chain(prompts.prompt_website_description_short, description)
 
 def get_audience_persona(description):
-
-    """
-    Generate the audience persona based on the provided description.
-
-    Args:
-        description (str): The business description.
-
-    Returns:
-        str: The audience persona.
-    """
-    
-    prompt_persona_building_template = prompt_builder.get_prompt_template(prompts.prompt_persona_building)
-    chain_audience_persona = chains.initialize_llm_chain(prompt_persona_building_template)
-    audience_persona = chains.run_llm_chain(chain_audience_persona,description)
-
-    return audience_persona
+    return process_chain(prompts.prompt_persona_building, description)
 
 def get_product_category(description):
-    prompt_product_category_template = prompt_builder.get_prompt_template(prompts.prompt_product_category)
-    chain_audience_persona = chains.initialize_llm_chain(prompt_product_category_template)
-    product_category = chains.run_llm_chain(chain_audience_persona,description)
+    return process_chain(prompts.prompt_product_category, description)
 
-    return product_category
+def get_tone_of_voice(description):
+    return process_chain(prompts.prompt_tone_of_voice, description)
+
+def get_value_proposition(description):
+    return process_chain(prompts.prompt_value_proposition, description)
 
 def get_swot_analysis_from_form():
     with open('config/form_data.json', 'r') as file:
@@ -90,9 +66,7 @@ def get_swot_analysis_from_form():
         'product_category':product_category
     }
 
-    prompt_swot_template = prompt_builder.get_prompt_template(prompts.prompt_swot_analysis)
-    chain_swot_analysis = chains.initialize_llm_chain(prompt_swot_template)
-    swot_analysis = chains.run_llm_chain(chain_swot_analysis,prompt_data)
+    return process_chain(prompts.prompt_swot_analysis, prompt_data)
 
-    return swot_analysis
+
 

@@ -37,14 +37,22 @@ As output, please give 2 main product categories with 2-3 words max
 
 '''
 
-prompt_swot_analysis = '''
+prompt_tone_of_voice = '''
 
-Act as an expert marketing researcher.
-Please create a SWOT analysis for the product below. Divide the text in paragraphs
+Act as an expert market researcher.
 
-Brand Description: {description_long}
+Based on the information that you found on the website and the description, please mention 3 tone of voices used by the business
 
-Product Category: {product_category}
+Description: {description_long}
 
 '''
 
+prompt_value_proposition = '''
+
+Act as an expert market researcher.
+
+Based on the information that you found on the website and the description, please what's the value proposition of the business
+
+Description: {description_long}
+
+'''

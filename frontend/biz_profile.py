@@ -19,3 +19,16 @@ def get_main_elements():
         audience_persona = workflow.get_audience_persona(description)
         st.header("Audience Persona")
         st.write(audience_persona)
+
+        product_category = workflow.get_product_category(description)
+        st.header("Product Category")
+        st.write(product_category)
+
+        tone_of_voice = workflow.get_tone_of_voice(description)
+        st.header("Product Category")
+        st.write(tone_of_voice)
+
+        value_proposition = workflow.get_value_proposition(description)
+        st.header("Product Category")
+        st.write(value_proposition)
+
