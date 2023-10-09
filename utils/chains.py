@@ -21,5 +21,3 @@ def run_llm_chain(chain,input_variable):
 def run_qa_chain(chain,query):
     result = chain.run(query)
     return result
-
-

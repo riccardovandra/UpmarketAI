@@ -2,7 +2,7 @@ import streamlit as st
 from utils import storage
 
 
-form_fields = storage.load_form_config('config/form_config.json')
+form_fields = storage.load_form_config()
 
 #Form Functionalities
 with st.form('Business Profile Information'):
